@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brmaria- < brmaria-@student.42porto.com    +#+  +:+       +#+         #
+#    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/06 17:05:06 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/05/09 19:09:25 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = megaphone
-SRC = srcs/megaphone.cpp
+NAME = phonebook
+SRC =	srcs/main.cpp \
+		srcs/Contact.cpp \
+		srcs/PhoneBook.cpp
 
 # compiling flags:
 CC = c++
