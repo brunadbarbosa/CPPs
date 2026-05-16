@@ -6,14 +6,14 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/16 21:19:00 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/05/16 18:20:33 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = canonical
+NAME = losers
 SRC =	srcs/main.cpp \
-		srcs/Fixed.cpp \
+		srcs/Harl.cpp \
 
 # compiling flags:
 CC = c++
