@@ -6,16 +6,14 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/16 14:48:46 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/05/16 18:20:33 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = giveMeAWeapon
+NAME = losers
 SRC =	srcs/main.cpp \
-		srcs/HumanA.cpp \
-		srcs/HumanB.cpp \
-		srcs/Weapon.cpp \
+		srcs/Harl.cpp \
 
 # compiling flags:
 CC = c++
