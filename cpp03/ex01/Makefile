@@ -6,14 +6,15 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/17 13:39:17 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/05/23 16:26:46 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = losers
+NAME = fatherAndSon
 SRC =	srcs/main.cpp \
-		srcs/Fixed.cpp \
+		srcs/ClapTrap.cpp \
+		srcs/ScavTrap.cpp \
 
 # compiling flags:
 CC = c++
