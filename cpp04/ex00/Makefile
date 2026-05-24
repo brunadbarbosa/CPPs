@@ -6,14 +6,18 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/17 16:06:55 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/05/24 13:24:52 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = losers
+NAME = IWantAPet
 SRC =	srcs/main.cpp \
-		srcs/Fixed.cpp \
+		srcs/Animal.cpp \
+		srcs/Dog.cpp\
+		srcs/Cat.cpp \
+		srcs/WrongAnimal.cpp \
+		srcs/WrongCat.cpp \
 
 # compiling flags:
 CC = c++

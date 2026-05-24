@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 20:58:27 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/05/23 21:01:15 by brmaria-         ###   ########.fr       */
+/*   Created: 2026/05/23 20:11:14 by brmaria-          #+#    #+#             */
+/*   Updated: 2026/05/24 13:10:06 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+# define CAT_HPP
+
 #include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 
-int main ()
-{
-	const	Animal *meta = new Animal();
-	const	Animal *j = new Dog();
-	const	Animal *i = new Cat();
+class Cat : public Animal {
+	public:
+		Cat(void);
+		Cat(Cat const &copy);
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-}
+		Cat &operator=(Cat const &copy);
+		
+		virtual ~Cat(void);
+		void makeSound() const;
+};
+
+#endif
