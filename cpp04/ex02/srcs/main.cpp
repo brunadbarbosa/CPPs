@@ -6,7 +6,7 @@
 /*   By: brmaria- < brmaria-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 20:58:27 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/05/29 17:26:11 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:34:46 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 int main()
 {
   // --- original tests ---
-  const Animal *meta = new Animal();
+  //const Animal *meta = new Animal();
   const Animal *j = new Dog();
   const Animal *i = new Cat();
   std::cout << j->getType() << " " << std::endl;
   std::cout << i->getType() << " " << std::endl;
   j->makeSound();
   i->makeSound();
-  delete meta;
+  //delete meta;
   delete j;
   delete i;
 

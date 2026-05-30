@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmaria- < brmaria-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/23 20:09:04 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/05/29 17:04:10 by brmaria-         ###   ########.fr       */
+/*   Created: 2026/05/24 13:00:25 by brmaria-          #+#    #+#             */
+/*   Updated: 2026/05/24 13:15:34 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal {
-	private:
-		Brain *_brain;
+class WrongCat : public WrongAnimal {
 	public:
-		Dog(void);
-		Dog(Dog const &copy);
-
-		Dog &operator=(Dog const &copy);
+		WrongCat(void);
+		WrongCat(WrongCat const &copy);
+		virtual ~WrongCat(void);
 		
-		virtual ~Dog(void);
+		WrongCat &operator=(WrongCat const &copy);
+		
 		void makeSound() const;
-		Brain *getBrain(void) const;
 };
+
 
 #endif
