@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmaria- < brmaria-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 20:31:03 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/05/29 17:29:27 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/05/30 11:37:14 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog(void) {
 
 Dog::Dog(Dog const &copy) {
 	std::cout << "Dog's Copy assigment constructor called" << std::endl;
-	this->_brain = nullptr;
+	this->_brain = NULL;
 	*this = copy;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmaria- < brmaria-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 20:30:39 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/05/29 17:31:04 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/05/30 11:37:09 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat(void) {
 
 Cat::Cat(Cat const &copy) : Animal(copy) {
 	std::cout << "Cat's Copy assigment constructor called" << std::endl;
-	this->_brain = nullptr;
+	this->_brain = NULL;
 	*this = copy; 
 }
 

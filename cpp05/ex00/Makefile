@@ -6,20 +6,15 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/05/30 11:26:27 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/08/01 20:18:37 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = isAbstract
+NAME = Bureaucrat
 SRC =	srcs/main.cpp \
-		srcs/Animal.cpp \
-		srcs/Dog.cpp\
-		srcs/Cat.cpp \
-		srcs/WrongAnimal.cpp \
-		srcs/WrongCat.cpp \
-		srcs/Brain.cpp
-		
+		srcs/Bureaucrat.cpp \
+
 # compiling flags:
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
