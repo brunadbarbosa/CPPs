@@ -6,14 +6,15 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/09/19 14:57:38 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/09/19 17:20:50 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = Bureaucrat
+NAME = Maggots
 SRC =	srcs/main.cpp \
 		srcs/Bureaucrat.cpp \
+		srcs/Form.cpp \
 
 # compiling flags:
 CC = c++
