@@ -6,15 +6,18 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/09/20 13:45:44 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/09/20 15:56:33 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # program name
-NAME = Form
+NAME = AForm
 SRC =	srcs/main.cpp \
 		srcs/Bureaucrat.cpp \
-		srcs/Form.cpp \
+		srcs/AForm.cpp \
+		srcs/ShrubberyCreationForm.cpp \
+		srcs/PresidentialPardonForm.cpp \
+		srcs/RobotomyRequestForm.cpp \
 
 # compiling flags:
 CC = c++

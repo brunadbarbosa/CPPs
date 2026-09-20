@@ -115,9 +115,9 @@ int	main(void)
 		{
 			debugMessageAction("try to sign the form");
 			theContract->beSigned(*theAssistent);
-			// theAssistent->signForm(*theContract);
+			theAssistent->signForm(*theContract);
 		}
-		catch(Form::GradeTooLowException &e)
+		catch(Form::GradeTooHighException &e)
 		{
 			exceptionError("Permission denied: ", e.what());
 			exceptionError(theAssistent->getName() + " can't sign ", theContract->getName());
