@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:33:05 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/19 14:52:50 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 13:16:30 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade too low");
 }
 
-std::ostream &operator<<(std::ostream &out, Bureaucrat *other) {
-	out << other->getName() << ", bureaucrat grade " << other->getGrade() << std::endl;
+std::ostream &operator<<(std::ostream &out, Bureaucrat const &other) {
+	out << other.getName() << ", bureaucrat grade " << other.getGrade() << "." << std::endl;
 	return (out);
 }

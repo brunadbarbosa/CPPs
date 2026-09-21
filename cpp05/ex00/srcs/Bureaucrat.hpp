@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:33:02 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/19 14:27:30 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 13:15:54 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,5 @@ class Bureaucrat {
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
