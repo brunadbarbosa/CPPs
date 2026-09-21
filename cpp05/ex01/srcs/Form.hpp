@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 15:43:53 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/19 16:09:07 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 17:50:07 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,4 @@ class Form {
 		};
 };
 
-std::ostream &operator<<(std::ostream &out, Form *form);
+std::ostream &operator<<(std::ostream &out, Form const &form);

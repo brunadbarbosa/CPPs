@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 16:09:23 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/21 11:09:24 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 17:52:31 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,7 @@ void Form::_checkGrades(int signGrade, int executeGrade) {
 void Form::beSigned(Bureaucrat &bureaucrat) {
 	if ((int)bureaucrat.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
-	else if(!this->_isSigned) {
-		std::cout << "\t" << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-		this->_isSigned = true;
-	}
-	else
-		std::cout << "\t" << bureaucrat.getName() << " couldn't sign " << this->getName() << " because it's already signed" << std::endl;
+	this->_isSigned = true;
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
@@ -88,11 +83,11 @@ const char *Form::GradeTooLowException::what() const throw() {
 	return ("Grade too low");
 }
 
-std::ostream &operator<<(std::ostream &out, Form *form) {
-	std::string isSigned = form->getIsSigned() ? "is signed" : "isn't signed";
-	out << form->getName() << " Form " << isSigned;
-	out << ", Sign-grade: " << form->getSignGrade();
-	out << ", execution-grade: " << form->getExecuteGrade();
+std::ostream &operator<<(std::ostream &out, Form const &form) {
+	std::string isSigned = form.getIsSigned() ? "is signed" : "isn't signed";
+	out << form.getName() << " Form " << isSigned;
+	out << ", Sign-grade: " << form.getSignGrade();
+	out << ", execution-grade: " << form.getExecuteGrade();
 	out << std::endl;
 	return (out);
 }
