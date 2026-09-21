@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 15:43:53 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/20 13:37:57 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 13:04:15 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class AForm {
 		class FormNotSignedException : public std::exception {
 			public:
 				virtual const char *what() const throw();
-		}
+		};
 };
 
-std::ostream &operator<<(std::ostream &out, AForm *form);
+std::ostream &operator<<(std::ostream &out, AForm const &form);

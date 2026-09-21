@@ -71,7 +71,7 @@ void AForm::_checkGrades(int signGrade, int executeGrade) {
 
 void AForm::beSigned(Bureaucrat &bureaucrat) {
 	if ((int)bureaucrat.getGrade() > this->_signGrade)
-		throw AForm::GradeTooHighException();
+		throw AForm::GradeTooLowException();
 	else if(!this->_isSigned) {
 		std::cout << "\t" << bureaucrat.getName() << " signed " << this->getName() << std::endl;
 		this->_isSigned = true;
@@ -92,11 +92,11 @@ const char *AForm::FormNotSignedException::what() const throw() {
 	return ("Form needs to be signed before executing");
 }
 
-std::ostream &operator<<(std::ostream &out, AForm *form) {
-	std::string isSigned = form->getIsSigned() ? "is signed" : "isn't signed";
-	out << form->getName() << " AForm " << isSigned;
-	out << ", Sign-grade: " << form->getSignGrade();
-	out << ", execution-grade: " << form->getExecuteGrade();
+std::ostream &operator<<(std::ostream &out, AForm const &form) {
+	std::string isSigned = form.getIsSigned() ? "is signed" : "isn't signed";
+	out << form.getName() << " AForm " << isSigned;
+	out << ", Sign-grade: " << form.getSignGrade();
+	out << ", execution-grade: " << form.getExecuteGrade();
 	out << std::endl;
 	return (out);
 }

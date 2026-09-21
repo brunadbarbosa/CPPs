@@ -1,217 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/21 12:48:49 by brmaria-          #+#    #+#             */
+/*   Updated: 2026/09/21 12:48:53 by brmaria-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-#define RESET	"\033[0m"
-#define RED		"\033[31m"
-#define GREEN	"\033[32m"
-#define BLUE	"\033[34m"
-#define YELLOW	"\033[33m"
-#define PURPLE	"\033[35m"
-#define WITHOUT_NEWLINE	0
-#define WITH_NEWLINE	1
-
-void	pressEnter(void)
+static void testConstruction(void)
 {
-	std::cout << std::endl << "press ENTER to continue" << std::endl;
-	std::cin.ignore();
-	std::cout << "\033c";
-}
+	std::cout << "-- construction --" << std::endl;
 
-void debugMessageConstructors(int newline)
-{
-	std::cout << std::endl;
-	std::cout << BLUE << "constructors> " << RESET;
-	if (newline)
-		std::cout << std::endl;
-}
+	Form contract("Contract", 40, 60);
+	std::cout << contract;
 
-void debugMessageStatus(int newline)
-{
-	std::cout << std::endl;
-	std::cout << PURPLE << "status> " << RESET;
-	if (newline)
-		std::cout << std::endl;
-}
-
-void debugMessageDestructors(int newline)
-{
-	std::cout << std::endl;
-	std::cout << YELLOW << "destructors> " << RESET;
-	if (newline)
-		std::cout << std::endl;
-}
-
-void debugMessageAction(std::string action)
-{
-	std::cout << std::endl;
-	std::cout << GREEN << "action> " << RESET;
-	if (action.length())
-		std::cout << action << std::endl;
-}
-
-void exceptionError(std::string message, std::string exception)
-{
-	std::cerr << RED << "\t" << message << exception << RESET << std::endl;
-}
-
-void titleHeader(const std::string& message)
-{
-    std::cout << "\033c";
-    int standartSize = 34;
-    int messageSize = message.length();
-    int spaces = (standartSize - messageSize) / 2;
-
-    std::cout << "************************************" << std::endl << "*";
-	for (int i = 0; i < spaces; i++)
-		std::cout << " ";
-	std::cout << message;
-	for (int i = 0; i < spaces; i++)
-		std::cout << " ";
-	std::cout << "*" << std::endl << "************************************" << std::endl;
-}
-
-int	main(void)
-{
+	try
 	{
-		titleHeader("BASIC TEST");
-
-		debugMessageConstructors(WITH_NEWLINE);
-		Bureaucrat *theDefault = new Bureaucrat();
-		Form *theForm = new Form();
-
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theDefault;
-		std::cout << theForm;
-		try
-		{
-			debugMessageAction("try to sign the form");
-			theForm->beSigned(*theDefault);
-		}
-		catch(Form::GradeTooHighException &e)
-		{
-			exceptionError("Permission denied: ", e.what());
-			exceptionError(theDefault->getName() + " can't sign ", theForm->getName());
-		}
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theForm;
-
-		debugMessageDestructors(WITH_NEWLINE);
-		delete theForm;
-		delete theDefault;
+		Form tooHigh("Ghost", 0, 60);
+		(void)tooHigh;
 	}
-	pressEnter();
+	catch (std::exception &e)
 	{
-		titleHeader("TEST GRADE LEVEL");
-
-		debugMessageConstructors(WITH_NEWLINE);
-		Bureaucrat *theAssistent = new Bureaucrat("Assistent", 100);
-		Bureaucrat *theBoss = new Bureaucrat("Boss", 1);
-		Form *theContract = new Form("Contract", 99, 99);
-
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theAssistent << theBoss << theContract;
-
-		try
-		{
-			debugMessageAction("try to sign the form");
-			theContract->beSigned(*theAssistent);
-			theAssistent->signForm(*theContract);
-		}
-		catch(Form::GradeTooHighException &e)
-		{
-			exceptionError("Permission denied: ", e.what());
-			exceptionError(theAssistent->getName() + " can't sign ", theContract->getName());
-		}
-		try
-		{
-			debugMessageAction("try to sign the form");
-			theBoss->signForm(*theContract);
-			// theContract->beSigned(*theBoss);
-		}
-		catch(Form::GradeTooLowException &e)
-		{
-			exceptionError("Permission denied: ", e.what());
-			exceptionError(theBoss->getName() + " can't sign ", theContract->getName());
-		}
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theContract;
-		try
-		{
-			debugMessageAction("try to sign the form");
-			theBoss->signForm(*theContract);
-			// theContract->beSigned(*theBoss);
-		}
-		catch(Form::GradeTooLowException &e)
-		{
-			exceptionError("Permission denied: ", e.what());
-			exceptionError(theBoss->getName() + " can't sign ", theContract->getName());
-		}
-
-		debugMessageDestructors(WITH_NEWLINE);
-		delete theAssistent;
-		delete theBoss;
-		delete theContract;
+		std::cout << "sign-grade 0 rejected: " << e.what() << std::endl;
 	}
-	pressEnter();
+
+	try
 	{
-		titleHeader("TEST INVALID GRADE");
-		Form *theHighest = NULL;
-		Form *theLowest = NULL;
-		try
-		{
-			debugMessageConstructors(WITHOUT_NEWLINE);
-			theHighest = new Form("Highest", 0, 1);
-		}
-		catch(Form::GradeTooHighException &e)
-		{
-			exceptionError("Invalid grade: ", e.what());
-		}
-		try
-		{
-			debugMessageConstructors(WITHOUT_NEWLINE);
-			theLowest = new Form("Lowest", 1, 151);
-		}
-		catch(Form::GradeTooLowException &e)
-		{
-			exceptionError("Invalid grade: ", e.what());
-		}
-		if (theHighest)
-		{
-			debugMessageStatus(WITHOUT_NEWLINE);
-			std::cout << theHighest;
-			debugMessageDestructors(WITHOUT_NEWLINE);
-			delete theHighest;
-		}
-		if (theLowest)
-		{
-			debugMessageStatus(WITHOUT_NEWLINE);
-			std::cout << theLowest;
-			debugMessageDestructors(WITHOUT_NEWLINE);
-			delete theLowest;
-		}
+		Form tooLow("Ghost", 40, 151);
+		(void)tooLow;
 	}
-	pressEnter();
+	catch (std::exception &e)
 	{
-		titleHeader("DEEP COPY TESTS");
-
-		debugMessageConstructors(WITH_NEWLINE);
-		Form *theOriginal = new Form("Xerox", 100, 110);
-
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theOriginal;
-
-		debugMessageConstructors(WITH_NEWLINE);
-		Form *theCopy = new Form(*theOriginal);
-
-		debugMessageDestructors(WITHOUT_NEWLINE);
-		delete theOriginal;
-
-		debugMessageStatus(WITH_NEWLINE);
-		std::cout << theCopy;
-
-		debugMessageDestructors(WITHOUT_NEWLINE);
-		delete theCopy;
-
+		std::cout << "execute-grade 151 rejected: " << e.what() << std::endl;
 	}
-	pressEnter();
+}
+
+static void testSigning(void)
+{
+	std::cout << std::endl << "-- signing --" << std::endl;
+
+	Form contract("Contract", 40, 60);
+	Bureaucrat intern("Intern", 100);
+	Bureaucrat boss("Boss", 10);
+
+	intern.signForm(contract);
+	std::cout << contract;
+
+	boss.signForm(contract);
+	std::cout << contract;
+}
+
+static void testCopy(void)
+{
+	std::cout << std::endl << "-- copy constructor --" << std::endl;
+
+	Form original("Original", 50, 50);
+	Bureaucrat boss("Boss", 1);
+	boss.signForm(original);
+
+	Form copy(original);
+	std::cout << "original: " << original;
+	std::cout << "copy:     " << copy;
+}
+
+int main(void)
+{
+	testConstruction();
+	testSigning();
+	testCopy();
+	return (0);
 }

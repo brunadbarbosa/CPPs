@@ -6,7 +6,7 @@
 #    By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:01:48 by brmaria-          #+#    #+#              #
-#    Updated: 2026/09/20 15:56:33 by brmaria-         ###   ########.fr        #
+#    Updated: 2026/09/21 13:06:28 by brmaria-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC =	srcs/main.cpp \
 		srcs/ShrubberyCreationForm.cpp \
 		srcs/PresidentialPardonForm.cpp \
 		srcs/RobotomyRequestForm.cpp \
+		srcs/Intern.cpp \
 
 # compiling flags:
 CC = c++

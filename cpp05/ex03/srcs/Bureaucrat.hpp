@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:33:02 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/19 17:29:06 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 12:55:43 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include <iostream>
 #include <string>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -35,7 +35,8 @@ class Bureaucrat {
 
 		std::string const getName() const;
 		size_t getGrade() const;
-		void signForm(Form &form);
+		void signForm(AForm &form);
+		void executeForm(AForm const &form) const;
 
 		void	incrementGrade();
 		void	decrementGrade();

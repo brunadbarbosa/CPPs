@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 16:09:23 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/19 17:18:49 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/21 11:09:24 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Form::_checkGrades(int signGrade, int executeGrade) {
 
 void Form::beSigned(Bureaucrat &bureaucrat) {
 	if ((int)bureaucrat.getGrade() > this->_signGrade)
-		throw Form::GradeTooHighException();
+		throw Form::GradeTooLowException();
 	else if(!this->_isSigned) {
 		std::cout << "\t" << bureaucrat.getName() << " signed " << this->getName() << std::endl;
 		this->_isSigned = true;
