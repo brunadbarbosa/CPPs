@@ -72,12 +72,7 @@ void AForm::_checkGrades(int signGrade, int executeGrade) {
 void AForm::beSigned(Bureaucrat &bureaucrat) {
 	if ((int)bureaucrat.getGrade() > this->_signGrade)
 		throw AForm::GradeTooLowException();
-	else if(!this->_isSigned) {
-		std::cout << "\t" << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-		this->_isSigned = true;
-	}
-	else
-		std::cout << "\t" << bureaucrat.getName() << " couldn't sign " << this->getName() << " because it's already signed" << std::endl;
+	this->_isSigned = true;
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
