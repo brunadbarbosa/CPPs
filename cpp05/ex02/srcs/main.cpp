@@ -6,7 +6,7 @@
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 15:55:24 by brmaria-          #+#    #+#             */
-/*   Updated: 2026/09/21 17:59:01 by brmaria-         ###   ########.fr       */
+/*   Updated: 2026/09/22 12:23:32 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 static void testShrubbery(void)
 {
-	std::cout << "-- shrubbery creation form --" << std::endl;
+	std::cout << "-- shrubbery creation form --" << std::endl << std::endl;
 
 	Bureaucrat rookie("Rookie", 150);
 	Bureaucrat farmer("Farmer", 100);
@@ -33,7 +33,7 @@ static void testShrubbery(void)
 
 static void testRobotomy(void)
 {
-	std::cout << std::endl << "-- robotomy request form --" << std::endl;
+	std::cout << std::endl << "-- robotomy request form --" << std::endl << std::endl;
 
 	Bureaucrat doctor("Dr. Madness", 1);
 	Bureaucrat assistant("Assistant", 72);
@@ -49,7 +49,7 @@ static void testRobotomy(void)
 
 static void testPresidentialPardon(void)
 {
-	std::cout << std::endl << "-- presidential pardon form --" << std::endl;
+	std::cout << std::endl << "-- presidential pardon form --" << std::endl << std::endl;
 
 	Bureaucrat president("President", 1);
 	Bureaucrat vicePresident("Vice President", 25);
