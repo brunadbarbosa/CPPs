@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:11:19 by brmaria-          #+#    #+#             */
+/*   Created: 2026/09/23 10:00:00 by brmaria-          #+#    #+#             */
 /*   Updated: 2026/09/23 10:00:00 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
 
 # include <string>
 
-class ScalarConverter {
-	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter &operator=(ScalarConverter const &other);
-		~ScalarConverter();
-	public:
-		static void convert(std::string const &literal);
+struct Data {
+	int			id;
+	std::string	name;
+	double		value;
 };
 
 #endif

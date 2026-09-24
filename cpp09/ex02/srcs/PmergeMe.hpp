@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:11:19 by brmaria-          #+#    #+#             */
+/*   Created: 2026/09/23 10:00:00 by brmaria-          #+#    #+#             */
 /*   Updated: 2026/09/23 10:00:00 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
 
+# include <vector>
+# include <deque>
 # include <string>
 
-class ScalarConverter {
+class PmergeMe {
 	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter &operator=(ScalarConverter const &other);
-		~ScalarConverter();
+		std::vector<int>	_input;
+		std::vector<int>	_vector;
+		std::deque<int>		_deque;
+		double				_vectorTime;
+		double				_dequeTime;
+
+		static int					_parseNumber(std::string const &token);
+		static std::vector<size_t>	_sortVector(std::vector<int> &values);
+		static std::deque<size_t>	_sortDeque(std::deque<int> &values);
 	public:
-		static void convert(std::string const &literal);
+		PmergeMe();
+		PmergeMe(PmergeMe const &other);
+		~PmergeMe();
+
+		PmergeMe &operator=(PmergeMe const &other);
+
+		void parse(int argc, char **argv);
+		void sort();
+		void display() const;
 };
 
 #endif

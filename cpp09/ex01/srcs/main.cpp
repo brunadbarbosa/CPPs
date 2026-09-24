@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:11:19 by brmaria-          #+#    #+#             */
+/*   Created: 2026/09/23 10:00:00 by brmaria-          #+#    #+#             */
 /*   Updated: 2026/09/23 10:00:00 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#include <iostream>
+#include <exception>
+#include "RPN.hpp"
 
-# include <string>
+int main(int argc, char **argv) {
+	if (argc != 2) {
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	try {
+		RPN rpn;
 
-class ScalarConverter {
-	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter &operator=(ScalarConverter const &other);
-		~ScalarConverter();
-	public:
-		static void convert(std::string const &literal);
-};
-
-#endif
+		std::cout << rpn.evaluate(argv[1]) << std::endl;
+	}
+	catch (std::exception const &e) {
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	return (0);
+}

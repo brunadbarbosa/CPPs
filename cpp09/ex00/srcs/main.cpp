@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 13:11:19 by brmaria-          #+#    #+#             */
+/*   Created: 2026/09/23 10:00:00 by brmaria-          #+#    #+#             */
 /*   Updated: 2026/09/23 10:00:00 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#include <iostream>
+#include <exception>
+#include "BitcoinExchange.hpp"
 
-# include <string>
+int main(int argc, char **argv) {
+	if (argc != 2) {
+		std::cout << "Error: could not open file." << std::endl;
+		return (1);
+	}
+	try {
+		BitcoinExchange exchange;
 
-class ScalarConverter {
-	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter const &other);
-		ScalarConverter &operator=(ScalarConverter const &other);
-		~ScalarConverter();
-	public:
-		static void convert(std::string const &literal);
-};
-
-#endif
+		exchange.loadDatabase("data.csv");
+		exchange.processInput(argv[1]);
+	}
+	catch (std::exception const &e) {
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
+	return (0);
+}
